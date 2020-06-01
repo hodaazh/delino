@@ -5,4 +5,5 @@ body {
   direction: rtl;
   font-family: "iransans";
   background-color: white;
+  color: var(--main-color);
 }

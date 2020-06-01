@@ -1,0 +1,53 @@
+:root {
+  --main-bg-color: #f2ece5;
+  --font-family: "iransans";
+  --main-color: #383c47;
+  --other-color: #232323;
+  --hover-color: rgb(204, 164, 126);
+}
+
+.header {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.1em;
+  border-bottom: 0.5px solid rgba(128, 128, 128, 0.2);
+  font-size: 1rem;
+  /* position: sticky;
+  top: 0; */
+  z-index: 2;
+  background-color: #fff;
+}
+.logo .icon-logo {
+  font-size: 2.2rem;
+}
+.header-right {
+  display: flex;
+  width: 20%;
+}
+.header-right .login {
+  padding: 0.5em 1em;
+  border: 1px solid red;
+  color: red;
+  border-radius: 0.4em;
+  margin-left: 0.4em;
+  font-size: 1rem;
+}
+.header-left {
+  width: 20%;
+  display: flex;
+  justify-content: flex-end;
+}
+.header-right .signUp {
+  font-size: 1rem;
+}
+.header-left-btn {
+  display: flex;
+  align-items: center;
+  padding: 0.55em 1.5em 0.55em 0.8em;
+  font-size: 1.3rem;
+  border-radius: 0.2em;
+  background: linear-gradient(-60deg, #ef4123, #ef2379);
+  color: white;
+}

@@ -1,0 +1,116 @@
+.retina-launcher {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background-color: #ef4123;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+}
+.retina-launcher:after {
+  content: "\e90a";
+  font-family: "icomoon";
+  transition: all 0.3s linear;
+  font-size: 1.5rem;
+  color: #fff;
+}
+.active:after {
+  content: "\e90b";
+  font-family: "icomoon";
+  font-size: 1rem;
+  color: #fff;
+}
+.active + .retina-container {
+  opacity: 1;
+  transform: translateY(-1rem);
+}
+.retina-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 23rem;
+  height: 28rem;
+  margin: 2rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: all 0.3s;
+  position: absolute;
+  bottom: 2rem;
+  right: 3rem;
+  opacity: 0;
+}
+.retina-container-toolbar {
+  display: flex;
+  flex-direction: column;
+  flex: 2.7;
+  background-color: #ef4123;
+  padding: 1rem;
+  color: #fff;
+  align-items: center;
+}
+.retina-container-toolbar-logo {
+  font-size: 1.2rem;
+  margin-bottom: 2em;
+}
+.retina-container-text {
+  flex: 2;
+}
+.retina-container-sending {
+  flex: 1;
+}
+.retina-container-toolbar-people {
+  display: flex;
+  justify-content: center;
+  font-size: 0.7rem;
+}
+.retina-container-toolbar-people div {
+  display: flex;
+  flex-direction: column;
+  margin: 0 1em 3em;
+}
+.retina-container-toolbar-people img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  margin-bottom: 0.4rem;
+}
+.retina-container-toolbar p {
+  max-width: 80%;
+  font-size: 0.7rem;
+  line-height: 1rem;
+  opacity: 0.8;
+  border-bottom: 0.5px solid rgba(253, 252, 252, 0.1);
+  padding-bottom: 2em;
+  margin-bottom: 1.5em;
+}
+.retina-container-text {
+  background-image: url(https://retain.ir/assets/lte/img/chat_bg/background8.png);
+}
+.retina-container-sending {
+  display: flex;
+  overflow: hidden;
+  background-color: cornsilk;
+}
+.retina-container-sending textarea {
+  flex: 0.8;
+  padding: 0 1em;
+  font-size: 0.8rem;
+  align-items: center;
+  font-family: "iransans";
+  border-color: transparent;
+  background-color: cornsilk;
+}
+.retina-container-sending textarea:hover {
+  border: none;
+}
+.retina-container-sending div {
+  display: flex;
+  flex: 0.2;
+  align-items: center;
+  color: gray;
+}
+.retina-container-sending div i {
+  flex: 1;
+}
