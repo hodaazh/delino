@@ -11,10 +11,12 @@ function Cart({
   address,
   people,
   time,
+  type,
 }) {
   const [rate, setRate] = useState(3.5);
   return (
-    <div className="cart">
+    // <div className="cart-container">
+    <div className={type === "newest" ? "cartNew" : "cart"}>
       <div className="cart-img">
         <img src={mainImg} />
         <button className="like"></button>
@@ -58,6 +60,7 @@ function Cart({
         </div>
       </div>
     </div>
+    // </div>
   );
 }
 

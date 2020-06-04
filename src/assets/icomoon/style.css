@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?rbxd8g');
-  src:  url('fonts/icomoon.eot?rbxd8g#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?rbxd8g') format('truetype'),
-    url('fonts/icomoon.woff?rbxd8g') format('woff'),
-    url('fonts/icomoon.svg?rbxd8g#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?jg9dtx');
+  src:  url('fonts/icomoon.eot?jg9dtx#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?jg9dtx') format('truetype'),
+    url('fonts/icomoon.woff?jg9dtx') format('woff'),
+    url('fonts/icomoon.svg?jg9dtx#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,16 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-logo-delino-sign:before {
+  content: "\e90f";
+  color: #ef4123;
+}
+.icon-film-roll:before {
+  content: "\e90d";
+}
+.icon-paper-plane:before {
+  content: "\e90e";
+}
 .icon-cancel:before {
   content: "\e90b";
 }
@@ -65,9 +75,21 @@
 .icon-like:before {
   content: "\e906";
 }
+.icon-sphere:before {
+  content: "\e9c9";
+}
 .icon-attachment:before {
   content: "\e9cd";
 }
 .icon-smile:before {
   content: "\e9e1";
+}
+.icon-facebook:before {
+  content: "\ea90";
+}
+.icon-instagram:before {
+  content: "\ea92";
+}
+.icon-twitter:before {
+  content: "\ea96";
 }
