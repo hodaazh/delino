@@ -6,6 +6,7 @@ import MainScreen from "./screen/MainScreen/MainScreen";
 import Cart from "./components/Cart/Cart";
 import SlideShow from "./components/SlideShow/SlideShow";
 import Message from "./components/Message/Message";
+import RestScreen from "./screen/RestScreen/RestScreen";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       {/* <Cart /> */}
       {/* <SlideShow /> */}
       {/* <Message /> */}
+      <RestScreen />
     </div>
   );
 }

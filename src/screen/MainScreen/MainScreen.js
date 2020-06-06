@@ -7,6 +7,7 @@ import Cart from "../../components/Cart/Cart";
 import Footer from "../../components/Footer/Footer";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import SameSliders from "../../components/SameSliders/SameSliders";
 let myWidth = 0;
 
 const poplularFood = [
@@ -166,7 +167,6 @@ const logo = [
 ];
 
 function MainScreen() {
-  // const [logo, setLogo] = useState("pre");
   const [state, setState] = useState({
     tizerslide: 0,
     otherslide: 3,
@@ -193,7 +193,7 @@ function MainScreen() {
     },
     appendDots: (dots) => (
       <div>
-        <ul style={{ margin: " -4em 0" }}> {dots} </ul>
+        <ul style={{ margin: " -3em 0" }}> {dots} </ul>
       </div>
     ),
     customPaging: (index) => {
@@ -233,7 +233,7 @@ function MainScreen() {
     },
     appendDots: (dots) => (
       <div>
-        <ul style={{ margin: " 0 " }}> {dots} </ul>
+        <ul style={{ margin: " 1em 0 " }}> {dots} </ul>
       </div>
     ),
     customPaging: (index) => {
@@ -291,15 +291,15 @@ function MainScreen() {
     <div>
       <div className="forsticky">
         <Navbar />
-        <div className="user-location">
+        <section className="user-location">
           <div className="user-location__container">
             <i className="icon-placeholder" />
             <b>در</b>
             <strong>تهران</strong>
           </div>
-        </div>
+        </section>
       </div>
-      <div className="search-all-rest">
+      <section className="search-all-rest">
         <div className="search-all-rest__wrapper">
           <div className="search-all-rest-input">
             <form>
@@ -322,16 +322,20 @@ function MainScreen() {
             </form>
           </div>
         </div>
-      </div>
+      </section>
       <div className="slide">
         <Slider {...tizer}>
           {tizerImg.map((iteration, index) => (
-            <img src={tizerImg[index].img} className="slider-img" />
+            <img
+              key={`tizer${index}`}
+              src={tizerImg[index].img}
+              className="slider-img"
+            />
           ))}
         </Slider>
       </div>
       <div className="content-inner">
-        <div className="content-inner-info-title-section">
+        <section className="content-inner-info-title-section">
           <div className="content-inner-info-title-wrapper">
             <div className="content-inner-info-title">
               <h1>
@@ -348,8 +352,8 @@ function MainScreen() {
               </p>
             </div>
           </div>
-        </div>
-        <div className="content-inner-popular-section">
+        </section>
+        <section className="content-inner-popular-section">
           <div className="content-inner-popular-wrapper">
             <header>
               <h2>دسته های محبوب</h2>
@@ -357,7 +361,7 @@ function MainScreen() {
             <div className="popular-food">
               <ul>
                 {poplularFood.map((iteration, index) => (
-                  <li>
+                  <li key={`food-${index}`}>
                     <a href="#">
                       <img src={poplularFood[index].image} />
                       <span>{poplularFood[index].title}</span>
@@ -367,59 +371,25 @@ function MainScreen() {
               </ul>
             </div>
           </div>
-        </div>
-        <div className="content-inner-discount-new-section">
-          <div className="content-inner-discount-new-wrapper">
-            <div className="discount-new-Wrapper-same">
-              <h2>تخفیف دارها</h2>
-            </div>
-            <h3 className="resturant">
-              <a href="#">رستوران&zwnj;های بیشتر</a>
-            </h3>
-          </div>
-          <div className="slider-discount-wrapper">
-            <Slider {...settings}>
-              {cartList.map((iteration, index) => (
-                <Cart
-                  mainImg={cartList[index].mainImg}
-                  logoImg={cartList[index].logoImg}
-                  discount={cartList[index].discount}
-                  titlerest={cartList[index].titlerest}
-                  addressParant={cartList[index].addressParant}
-                  address={cartList[index].address}
-                  people={cartList[index].people}
-                  time={cartList[index].time}
-                />
-              ))}
-            </Slider>
-          </div>
-        </div>
-        <div className="content-inner-discount-new-section">
-          <div className="content-inner-discount-new-wrapper">
-            <div className="discount-new-Wrapper-same">
-              <h2> جدیدترین&zwnj;ها </h2>
-            </div>
-            <h3 className="resturant">
-              <a href="#">رستوران&zwnj;های بیشتر</a>
-            </h3>
-          </div>
-        </div>
-        <div className="slider-discount-wrapper">
-          <Slider {...settings}>
-            {cartListNewest.map((iteration, index) => (
-              <Cart
-                mainImg={cartListNewest[index].mainImg}
-                logoImg={cartListNewest[index].logoImg}
-                discount={cartListNewest[index].discount}
-                titlerest={cartListNewest[index].titlerest}
-                addressParant={cartListNewest[index].addressParant}
-                address={cartListNewest[index].address}
-                people={cartListNewest[index].people}
-                time={cartListNewest[index].time}
-              />
-            ))}
-          </Slider>
-        </div>
+        </section>
+        <SameSliders
+          cartList={cartList}
+          settings={settings}
+          title="تخفیف دارها"
+          keytitle={`discount`}
+        />
+        <SameSliders
+          cartList={cartList}
+          settings={settings}
+          title="پرفروشترین&zwnj;ها"
+          keytitle={`bestsell`}
+        />
+        <SameSliders
+          cartList={cartListNewest}
+          settings={settings}
+          title="جدیدترین&zwnj;ها"
+          keytitle={`newer`}
+        />
         <section className="app-promotion">
           <div className="app-promotion-wrapper">
             <div className="app-promotion-right">
@@ -438,7 +408,7 @@ function MainScreen() {
               </form>
               <ul className="app-links">
                 {appLinks.map((iteration, index) => (
-                  <li>
+                  <li key={`-${index}`}>
                     <a href="#">
                       <img src={appLinks[index].img} />
                     </a>
@@ -461,7 +431,7 @@ function MainScreen() {
             </header>
             <ul>
               {logo.map((iteration, index) => (
-                <li>
+                <li key={index}>
                   <a href="#">
                     <img src={logo[index].logo} />
                   </a>

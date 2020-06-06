@@ -15,7 +15,6 @@ function Cart({
 }) {
   const [rate, setRate] = useState(3.5);
   return (
-    // <div className="cart-container">
     <div className={type === "newest" ? "cartNew" : "cart"}>
       <div className="cart-img">
         <img src={mainImg} />
@@ -60,7 +59,6 @@ function Cart({
         </div>
       </div>
     </div>
-    // </div>
   );
 }
 
