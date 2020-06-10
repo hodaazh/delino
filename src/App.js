@@ -7,15 +7,17 @@ import Cart from "./components/Cart/Cart";
 import SlideShow from "./components/SlideShow/SlideShow";
 import Message from "./components/Message/Message";
 import RestScreen from "./screen/RestScreen/RestScreen";
+import CartFood from "./components/CartFood/CartFood";
 
 function App() {
   return (
     <div className="App">
-      <MainScreen />
+      {/* <MainScreen /> */}
       {/* <Cart /> */}
       {/* <SlideShow /> */}
       {/* <Message /> */}
       <RestScreen />
+      {/* <CartFood /> */}
     </div>
   );
 }

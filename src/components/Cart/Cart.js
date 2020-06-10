@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import StarRatingComponent from "react-star-rating-component";
 import "./cart.css";
+import ButtonColorful from "../ButtonColorful/ButtonColorful";
 
 function Cart({
   mainImg,
@@ -11,17 +12,15 @@ function Cart({
   address,
   people,
   time,
-  type,
 }) {
   const [rate, setRate] = useState(3.5);
   return (
-    <div className={type === "newest" ? "cartNew" : "cart"}>
+    // className={type === "newest" ? "cartNew" : "cart"}
+    <div className="cart">
       <div className="cart-img">
         <img src={mainImg} />
         <button className="like"></button>
-        <button className={discount === "null" ? "nodiscount" : "discount"}>
-          %<b>{discount}</b>
-        </button>
+        <ButtonColorful discount={discount} type="big" />
         <figure className="logo-holder">
           <img src={logoImg} />
         </figure>

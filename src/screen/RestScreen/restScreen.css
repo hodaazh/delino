@@ -1,0 +1,342 @@
+:root {
+  --many-use-color: #ef4123;
+  --main-color: #383c47;
+}
+
+.rest-cover {
+  display: flex;
+  flex: 1;
+}
+
+.rest-pay-container {
+  flex: 0.5;
+  padding: 3em 0;
+  /* position: sticky;
+  top: 0; */
+}
+.rest-pay {
+  position: sticky;
+  top: 8rem;
+}
+.rest-info {
+  flex: 1.5;
+  position: relative;
+}
+.empty-img img {
+  width: 95%;
+  margin: 0 auto 0.5em;
+}
+.empty-txt {
+  color: #ccc;
+}
+.rest-info-img {
+  position: relative;
+}
+.rest-info-img .rest-info-img-main {
+  width: 100%;
+  height: 19rem;
+  object-fit: cover;
+}
+.rest-info-img .back-btn,
+.rest-info-img .hoby-btn {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 1rem 0 0 3rem;
+  padding: 0.3rem 0.9rem;
+  border-radius: 0.3rem;
+  border: 1px solid white;
+  color: white;
+  font-size: 1rem;
+}
+.rest-info-img .back-btn:after {
+  content: "\e908";
+  font-family: "icomoon";
+  font-size: 1.3rem;
+  padding-right: 0.2rem;
+}
+.hoby-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 1rem 2rem 0 0 !important;
+}
+.hoby-btn::before {
+  content: "\e916";
+  font-family: "icomoon";
+  padding-left: 0.2rem;
+}
+.hoby-btn:hover::before {
+  content: "\e917";
+  font-family: "icomoon";
+  color: white;
+}
+.hoby-btn:hover {
+  background: linear-gradient(-60deg, #ef4123, #ef2379);
+  border-color: transparent;
+}
+.hoby-icon {
+  color: white;
+}
+.rest-info-img .discount-btn {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(-60deg, #ef4123, #ef2379);
+  padding: 0.3rem 1rem;
+  margin: 0 0 1rem 3rem !important;
+  border-radius: 0 2rem 2rem 2rem;
+  font-size: 0.9rem;
+  color: white;
+}
+.rest-info-img-logo {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 7rem;
+  height: 7rem;
+  margin: 0 2rem 1.3rem 0;
+  border-radius: 2rem;
+}
+.rest-info-text-wrapper {
+  display: flex;
+  flex: 1;
+  width: 90%;
+  margin: 0.8rem auto;
+}
+.rest-info-text-right,
+.rest-info-text-left {
+  flex: 1;
+}
+.rest-info-text-right-rate {
+  display: flex;
+  text-align: right;
+}
+.rest-info-text-right h1 {
+  display: flex;
+  font-size: 2rem;
+  font-weight: 500;
+  align-items: baseline;
+}
+.rest-info-text-right h1 small {
+  font-size: 1rem;
+  color: #888;
+  padding-right: 0.4rem;
+  font-weight: 400;
+}
+.rest-rating {
+  font-size: 1.75rem;
+}
+.rest-info-text-right-rate {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+.rest-info-text {
+  border-bottom: 0.5px solid rgba(128, 128, 128, 0.2);
+}
+.rest-info-text-right-rate button {
+  padding: 0.3rem 0.5rem;
+  line-height: 1rem;
+  border-radius: 0.2rem;
+}
+.rest-info-text-right-rate .rate-btn {
+  background-color: #21c64f;
+  color: white;
+  margin: 0 0.5rem 0 0.2rem;
+}
+.rest-info-text-right-rate .comment-btn {
+  border: 1px solid var(--many-use-color);
+  padding: 0.3rem 0.5rem;
+  color: var(--many-use-color);
+  line-height: 1rem;
+}
+.rest-info-text-left {
+  flex: 1;
+  flex-direction: column;
+}
+.status-holder {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1em 0 3em 0;
+  text-align: end;
+  align-items: center;
+}
+.status-holder i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: end;
+  position: relative;
+  width: 1rem;
+  height: 1rem;
+  background-color: #21c64f;
+  display: flex;
+  vertical-align: top;
+  margin-left: 0.6rem;
+  border-radius: 50%;
+  animation: flash 1s linear infinite;
+}
+.status-holder i:before {
+  content: "";
+  position: absolute;
+  width: 1.5rem;
+  height: 1.5rem;
+  content: "";
+  background-color: rgba(33, 198, 79, 0.3);
+  border-radius: 50%;
+  transform: translateX(17%);
+}
+.status-holder span {
+  font-size: 0.9rem;
+}
+.helmet-time {
+  display: flex;
+  flex: 1;
+  margin: 0 auto 0 0;
+  width: 75%;
+  color: #bbb;
+}
+.helmet-time i {
+  font-size: 1.625rem;
+  color: var(--many-use-color);
+  margin-left: 1rem;
+  font-weight: 500;
+}
+.time-wrapper,
+.helmet-wrapper {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center;
+}
+.time-wrapper-text,
+.helmet-wrapper-text {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  line-height: 1.5rem;
+}
+.helmet-time a {
+  color: var(--many-use-color);
+  font-weight: 500;
+}
+.helmet-time small {
+  font-size: 0.8rem;
+}
+.time-wrapper-text a {
+  color: var(--main-color);
+}
+.rest-other {
+  /* background-color: #383c47; */
+}
+.section-tab {
+  border-bottom: 0.5px solid rgba(128, 128, 128, 0.2);
+  background-color: white;
+  position: relative;
+}
+.section-tab ul,
+.search-input-wrapper {
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  align-items: center;
+}
+.slider-menu,
+.slider-menu-show {
+  width: 100%;
+  /* height: 6.5rem; */
+  background-color: white;
+  position: absolute;
+  top: 0;
+  height: 0vh;
+  transition: all 0.2s;
+  overflow: hidden;
+  /* display: none; */
+  /* position: fixed; */
+}
+.slider-menu-show {
+  /* background-color: rgb(183, 0, 255); */
+  height: 8rem;
+}
+.slider-menu-wrapper {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  padding: 1rem 0;
+}
+.slider-menu-wrapper li {
+  display: flex;
+  flex-direction: column;
+}
+.nosliderMenu {
+  height: 0;
+}
+.slider-menu-wrapper ul {
+  display: flex;
+}
+/* .slider-menu-wrapper li {
+  width: 3rem;
+  height: 3rem;
+} */
+.slider-menu-wrapper img {
+  widows: 3rem;
+  height: 3rem;
+}
+.section-tab li {
+  margin-left: 3rem;
+  line-height: 3rem;
+}
+.section-tab li:hover {
+  color: var(--many-use-color);
+}
+.section-tab .activeMenu {
+  color: var(--many-use-color);
+  border-bottom: 3px solid var(--many-use-color);
+}
+.rest-other .search-input-rest {
+  display: block;
+  padding: 1rem 0;
+}
+.search-input-wrapper .search-input-form {
+  padding: 0.5rem 0.6rem;
+  width: 30%;
+  border: 0.5px solid rgba(128, 128, 128, 0.2);
+  display: flex;
+  background-color: white;
+}
+.search-input-form input {
+  padding-right: 0.5rem;
+  width: 90%;
+  line-height: 1.1rem;
+}
+::placeholder {
+  font-size: 0.9rem;
+  font-family: "iranSans";
+}
+/* .food-list {
+  background-color: rgb(240, 240, 240);
+} */
+.food-list-wrapper {
+  width: 90%;
+  margin: 0 auto;
+  text-align: right;
+}
+.food-list h2 {
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin: 2rem 0;
+}
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
