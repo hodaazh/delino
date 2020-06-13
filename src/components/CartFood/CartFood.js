@@ -19,7 +19,7 @@ function CartFood({ img, detail, title, price, discount }) {
         </div>
         <div className="cartFood-add">
           {/* <div className="cartFood-add-number">0</div> */}
-          <i className="food-copy"></i>
+          {/* <i className="food-copy"></i> */}
           <button className="cartFood-add-btn">
             <i className="icon-plus" />
           </button>

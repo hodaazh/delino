@@ -6,58 +6,211 @@ import React, {
   useCallback,
 } from "react";
 import "./restScreen.css";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+// import { Splide, SplideSlide } from "@splidejs/react-splide";
+// import "@splidejs/splide/dist/css/themes/splide-default.min.css";
 import StarRatingComponent from "react-star-rating-component";
 import Navbar from "../../components/Navbar/Navbar";
 import CartFood from "../../components/CartFood/CartFood";
 
 const cartFoodList = [
   {
-    img: require("../../assets/media/popular/pop1.jpg"),
-    title: " مارگینا پیتزا",
-    detail: "سس پیتزا، ریحان، پنیر موزاریلا",
-    price: "قیمت از 3500 تومان",
-    discount: "10",
+    menuImg: require("../../assets/media/slidericon/rice3.png"),
+    category: "1پیتزا",
+    key: "1",
+    detail: [
+      {
+        img: require("../../assets/media/popular/pop1.jpg"),
+        title: "مارگینا پیتزا",
+        desc: "سس پیتزا، ریحان، پنیر موزاریلا",
+        price: "قیمت از 3500 تومان",
+        discount: "10",
+      },
+      {
+        img: require("../../assets/media/popular/pop1.jpg"),
+        title: "پپرون پیتزا",
+        desc: "سس پیتزا، ریحان، پنیر موزاریلا",
+        price: "قیمت از 3500 تومان",
+        discount: "20",
+      },
+    ],
   },
   {
-    img: require("../../assets/media/popular/pop1.jpg"),
-    title: " مارگینا پیتزا",
-    detail: "سس پیتزا، ریحان، پنیر موزاریلا",
-    price: "قیمت از 3500 تومان",
-    discount: "10",
+    menuImg: require("../../assets/media/slidericon/bowl.png"),
+    category: "2پیتزا",
+    key: "2",
+    detail: [
+      {
+        img: require("../../assets/media/popular/pop1.jpg"),
+        title: "مارگینا پیتزا",
+        desc: "سس پیتزا، ریحان، پنیر موزاریلا",
+        price: "قیمت از 3500 تومان",
+        discount: "10",
+      },
+      {
+        img: require("../../assets/media/popular/pop1.jpg"),
+        title: "پپرون پیتزا",
+        desc: "سس پیتزا، ریحان، پنیر موزاریلا",
+        price: "قیمت از 3500 تومان",
+        discount: "20",
+      },
+    ],
   },
   {
-    img: require("../../assets/media/popular/pop1.jpg"),
-    title: " مارگینا پیتزا",
-    detail: "سس پیتزا، ریحان، پنیر موزاریلا",
-    price: "قیمت از 3500 تومان",
-    discount: "10",
+    menuImg: require("../../assets/media/slidericon/rice3.png"),
+    category: "3پیتزا",
+    key: "3",
+    detail: [
+      {
+        img: require("../../assets/media/popular/pop1.jpg"),
+        title: "مارگینا پیتزا",
+        desc: "سس پیتزا، ریحان، پنیر موزاریلا",
+        price: "قیمت از 3500 تومان",
+        discount: "10",
+      },
+      {
+        img: require("../../assets/media/popular/pop1.jpg"),
+        title: "پپرون پیتزا",
+        desc: "سس پیتزا، ریحان، پنیر موزاریلا",
+        price: "قیمت از 3500 تومان",
+        discount: "20",
+      },
+    ],
   },
   {
-    img: require("../../assets/media/popular/pop1.jpg"),
-    title: " مارگینا پیتزا",
-    detail: "سس پیتزا، ریحان، پنیر موزاریلا",
-    price: "قیمت از 3500 تومان",
-    discount: "10",
+    menuImg: require("../../assets/media/slidericon/bowl.png"),
+    category: "4پیتزا",
+    key: "4",
+    detail: [
+      {
+        img: require("../../assets/media/popular/pop1.jpg"),
+        title: "مارگینا پیتزا",
+        desc: "سس پیتزا، ریحان، پنیر موزاریلا",
+        price: "قیمت از 3500 تومان",
+        discount: "10",
+      },
+      {
+        img: require("../../assets/media/popular/pop1.jpg"),
+        title: "پپرون پیتزا",
+        desc: "سس پیتزا، ریحان، پنیر موزاریلا",
+        price: "قیمت از 3500 تومان",
+        discount: "20",
+      },
+    ],
+  },
+  {
+    menuImg: require("../../assets/media/slidericon/rice3.png"),
+    category: "5پیتزا",
+    key: "5",
+    detail: [
+      {
+        img: require("../../assets/media/popular/pop1.jpg"),
+        title: "مارگینا پیتزا",
+        desc: "سس پیتزا، ریحان، پنیر موزاریلا",
+        price: "قیمت از 3500 تومان",
+        discount: "10",
+      },
+      {
+        img: require("../../assets/media/popular/pop1.jpg"),
+        title: "پپرون پیتزا",
+        desc: "سس پیتزا، ریحان، پنیر موزاریلا",
+        price: "قیمت از 3500 تومان",
+        discount: "20",
+      },
+    ],
+  },
+  {
+    menuImg: require("../../assets/media/slidericon/bowl.png"),
+    category: "غذای اصلی",
+    key: "6",
+    detail: [
+      {
+        img: require("../../assets/media/popular/pop1.jpg"),
+        title: "غذای اصلی پیتزا",
+        desc: "سس پیتزا، ریحان، پنیر موزاریلا",
+        price: "قیمت از 3500 تومان",
+        discount: "10",
+      },
+      {
+        img: require("../../assets/media/popular/pop1.jpg"),
+        title: "پپرون عذای اصلی",
+        desc: "سس پیتزا، ریحان، پنیر موزاریلا",
+        price: "قیمت از 3500 تومان",
+        discount: "20",
+      },
+      {
+        img: require("../../assets/media/popular/pop1.jpg"),
+        title: "غذای اصلی پیتزا",
+        desc: "سس پیتزا، ریحان، پنیر موزاریلا",
+        price: "قیمت از 3500 تومان",
+        discount: "10",
+      },
+      {
+        img: require("../../assets/media/popular/pop1.jpg"),
+        title: "پپرون عذای اصلی",
+        desc: "سس پیتزا، ریحان، پنیر موزاریلا",
+        price: "قیمت از 3500 تومان",
+        discount: "20",
+      },
+      {
+        img: require("../../assets/media/popular/pop1.jpg"),
+        title: "غذای اصلی پیتزا",
+        desc: "سس پیتزا، ریحان، پنیر موزاریلا",
+        price: "قیمت از 3500 تومان",
+        discount: "10",
+      },
+      {
+        img: require("../../assets/media/popular/pop1.jpg"),
+        title: "پپرون عذای اصلی",
+        desc: "سس پیتزا، ریحان، پنیر موزاریلا",
+        price: "قیمت از 3500 تومان",
+        discount: "20",
+      },
+      {
+        img: require("../../assets/media/popular/pop1.jpg"),
+        title: "غذای اصلی پیتزا",
+        desc: "سس پیتزا، ریحان، پنیر موزاریلا",
+        price: "قیمت از 3500 تومان",
+        discount: "10",
+      },
+      {
+        img: require("../../assets/media/popular/pop1.jpg"),
+        title: "پپرون عذای اصلی",
+        desc: "سس پیتزا، ریحان، پنیر موزاریلا",
+        price: "قیمت از 3500 تومان",
+        discount: "20",
+      },
+    ],
   },
 ];
+
 function RestScreen() {
-  const top = useRef(0);
+  // const top = useRef(0);
   const ref = useRef(null);
+  const itemsRef = useRef([]);
   const [active, setActive] = useState("0");
   const [open, setOpen] = useState(false);
+  const [enable, setEnble] = useState(1);
 
   const handleScroll = () => {
-    // const { top } = ref.current.getBoundingClientRect();
-    // console.log({ top });
-    // setOpen(top - 80 < 0);
-    console.log(window.scrollY);
-    console.log(top.current);
+    const { top } = ref.current.getBoundingClientRect();
+    setOpen(top - 75 < 0);
+    console.log();
+    for (let i = 1; i < 7; i++) {
+      console.log(itemsRef.current[2].getBoundingClientRect().y);
+      if (itemsRef.current[i].getBoundingClientRect().y < 0) setEnble(i);
+    }
   };
-  useEffect(() => {
-    top.current = ref.current.getBoundingClientRect().top;
-    console.log(top);
-    // document.body.getBoundingClientRect;
-  });
+  const settingsres = {
+    infinite: true,
+    speed: 300,
+    infinite: false,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    arrows: true,
+  };
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -65,6 +218,11 @@ function RestScreen() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const scroll = (index, key) => {
+    setEnble(index);
+    theposition: e.clientY - itemsRef.current[key].getBoundingClientRect().top;
+  };
 
   return (
     <div>
@@ -100,10 +258,10 @@ function RestScreen() {
                     starColor={"orange"}
                     value={3}
                   />
-                  <div>
-                    <button className="rate-btn">4.3</button>
-                    <button className="comment-btn">مشاهده 24 نظر</button>
-                  </div>
+                  {/* <div> */}
+                  <button className="rate-btn">4.3</button>
+                  <button className="comment-btn">مشاهده 24 نظر</button>
+                  {/* </div> */}
                 </div>
               </div>
               <div className="rest-info-text-left">
@@ -161,35 +319,28 @@ function RestScreen() {
                   </li>
                 </ul>
               </div>
-
-              <div className={open ? "slider-menu-show" : "slider-menu"}>
-                <div className="slider-menu-wrapper">
-                  <ul>
-                    <li>
-                      <img
-                        src={require("../../assets/media/slidericon/breakfast.png")}
-                      />
-                      <span>پیتزا</span>
-                    </li>
-                    <li>
-                      <img
-                        src={require("../../assets/media/slidericon/breakfast.png")}
-                      />
-                      <span>غذای اصلی</span>
-                    </li>
-                    <li>
-                      <img
-                        src={require("../../assets/media/slidericon/breakfast.png")}
-                      />
-                      <span>صبحانه</span>
-                    </li>
-                    <li>
-                      <img
-                        src={require("../../assets/media/slidericon/breakfast.png")}
-                      />
-                      <span>صبحانه</span>
-                    </li>
-                  </ul>
+              <div>
+                <div className={open ? "slider-menu-show" : "slider-menu"}>
+                  <div className="slider-menu-wrapper">
+                    <Slider {...settingsres}>
+                      {cartFoodList.map(({ category, menuImg, key }, index) => (
+                        <a href={`#category-${key}`}>
+                          <div
+                            // onClick={() => setEnble(index)}
+                            onClick={() => scroll(index, key)}
+                            className={
+                              enable == index
+                                ? "enable slider-each-menu "
+                                : "slider-each-menu"
+                            }
+                          >
+                            <img src={menuImg} />
+                            <span>{category}</span>
+                          </div>
+                        </a>
+                      ))}
+                    </Slider>
+                  </div>
                 </div>
               </div>
             </div>
@@ -205,36 +356,30 @@ function RestScreen() {
               </div>
               <div className="food-list">
                 <div className="food-list-wrapper">
-                  <h2>پیتزا</h2>
-                  <div style={{ display: "flex", flexWrap: "wrap" }}>
-                    {cartFoodList.map((iteration, index) => (
-                      <CartFood
-                        img={cartFoodList[index].img}
-                        title={cartFoodList[index].title}
-                        detail={cartFoodList[index].detail}
-                        price={cartFoodList[index].price}
-                        discount={cartFoodList[index].discount}
-                      />
-                    ))}
-                  </div>
-                  <h2>غذای اصلی</h2>
-                  <div style={{ display: "flex", flexWrap: "wrap" }}>
-                    {cartFoodList.map((iteration, index) => (
-                      <CartFood
-                        img={cartFoodList[index].img}
-                        title={cartFoodList[index].title}
-                        detail={cartFoodList[index].detail}
-                        price={cartFoodList[index].price}
-                        discount={cartFoodList[index].discount}
-                      />
-                    ))}
-                  </div>
+                  {cartFoodList.map(({ category, detail, key }, i) => (
+                    <div
+                      id={`category-${key}`}
+                      ref={(el) => (itemsRef.current[key] = el)}
+                    >
+                      <h2>{category}</h2>
+                      <div className="food-list-desc">
+                        {detail.map((detail, j) => (
+                          <CartFood
+                            img={detail.img}
+                            title={detail.title}
+                            detail={detail.desc}
+                            price={detail.price}
+                            discount={detail.discount}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
           </section>
         </div>
-
         <div className="rest-pay-container">
           <div className="rest-pay">
             <div className="rest-pay-empty">
