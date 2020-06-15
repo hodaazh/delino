@@ -5,6 +5,7 @@
 
 .cartFood {
   display: flex;
+  /* flex: 1; */
   padding: 1rem;
   width: calc((90% - 1rem) / 2);
   height: 5rem;
@@ -20,8 +21,6 @@
   display: flex;
   flex: 0.25;
   position: relative;
-  /* background-color: turquoise; */
-  /* color: blue; */
   flex-direction: column;
 }
 
@@ -92,5 +91,27 @@
 @media only screen and (max-width: 768px) {
   .cartFood {
     width: 95%;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .carFood-middle {
+    margin-right: 0.5rem;
+  }
+  .carFood-right {
+    flex: 0.25;
+  }
+}
+@media only screen and (max-width: 388px) {
+  .cartFood {
+    padding: 0.3rem;
+  }
+  .carFood-middle {
+    margin-right: 0.7rem;
+  }
+  .carFood-right {
+    flex: 0.32;
+  }
+  .carFood-left {
+    flex: 0.1;
   }
 }

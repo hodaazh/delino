@@ -461,7 +461,9 @@ function MainScreen() {
             </div>
           </div>
         </section>
-        <Footer />
+        <div>
+          <Footer />
+        </div>
       </div>
     </div>
   );

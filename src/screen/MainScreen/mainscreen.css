@@ -12,18 +12,13 @@ a {
 .btn-default {
   background: linear-gradient(-60deg, #ef4123, #ef2379);
 }
-.user-location {
-  padding: 1.4em 0;
-  border-bottom: 0.5px solid rgba(128, 128, 128, 0.2);
-  z-index: 2;
-  background-color: #fff;
-}
+
 .forsticky {
   position: sticky;
   top: 0;
   z-index: 999;
 }
-.user-location__container,
+
 .search-all-rest__wrapper {
   display: flex;
   justify-content: center;
@@ -31,25 +26,7 @@ a {
   width: 90%;
   font-size: 1.125rem;
 }
-.user-location__container b {
-  padding: 0 0.2em;
-}
-.user-location__container strong::after {
-  content: "\e905";
-  font-family: "icomoon";
-  font-size: 0.7rem;
-  margin-right: 0.5em;
-  font-weight: 500;
-}
-.user-location__container strong {
-  color: #ef4123;
-  font-size: 1.1rem;
-  font-weight: 500;
-  padding-bottom: 0.2em;
-}
-.user-location__container strong:hover {
-  border-bottom: 1px dotted #ef4123;
-}
+
 .search-all-rest {
   background-color: #f8f8f8;
   padding: 0.8em 0;

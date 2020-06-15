@@ -26,6 +26,7 @@
   transition: all 0.3s;
   margin: 0 0.5em;
 }
+
 .cart:hover {
   transform: translateY(-0.1rem);
 }
@@ -53,6 +54,7 @@
   padding: 1em;
   box-sizing: border-box;
   direction: rtl;
+  background-color: white;
 }
 .cart-text::after {
   content: "";

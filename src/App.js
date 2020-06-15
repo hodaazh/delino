@@ -8,6 +8,8 @@ import SlideShow from "./components/SlideShow/SlideShow";
 import Message from "./components/Message/Message";
 import RestScreen from "./screen/RestScreen/RestScreen";
 import CartFood from "./components/CartFood/CartFood";
+import Search from "./screen/Search/Search";
+import FindCity from "./components/FindCity/FindCity";
 
 function App() {
   return (
@@ -16,8 +18,9 @@ function App() {
       {/* <Cart /> */}
       {/* <SlideShow /> */}
       {/* <Message /> */}
-      <RestScreen />
+      {/* <RestScreen /> */}
       {/* <CartFood /> */}
+      <Search />
     </div>
   );
 }

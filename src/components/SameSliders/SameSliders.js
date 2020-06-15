@@ -18,16 +18,16 @@ function SameSliders({ cartList, settings, title, keytitle }) {
       </div>
       <div className="slider-discount-wrapper">
         <Slider {...settings}>
-          {cartList.map((iteration, index) => (
+          {cartList.map((item, index) => (
             <Cart
-              mainImg={cartList[index].mainImg}
-              logoImg={cartList[index].logoImg}
-              discount={cartList[index].discount}
-              titlerest={cartList[index].titlerest}
-              addressParant={cartList[index].addressParant}
-              address={cartList[index].address}
-              people={cartList[index].people}
-              time={cartList[index].time}
+              mainImg={item.mainImg}
+              logoImg={item.logoImg}
+              discount={item.discount}
+              titlerest={item.titlerest}
+              addressParant={item.addressParant}
+              address={item.address}
+              people={item.people}
+              time={item.time}
               key={`${keytitle}${index}`}
             />
           ))}

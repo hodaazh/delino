@@ -1,19 +1,12 @@
-import React, {
-  useState,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  useCallback,
-} from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./restScreen.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-// import { Splide, SplideSlide } from "@splidejs/react-splide";
-// import "@splidejs/splide/dist/css/themes/splide-default.min.css";
 import StarRatingComponent from "react-star-rating-component";
 import Navbar from "../../components/Navbar/Navbar";
 import CartFood from "../../components/CartFood/CartFood";
+import Footer from "../../components/Footer/Footer";
 
 const cartFoodList = [
   {
@@ -193,13 +186,13 @@ function RestScreen() {
   const [active, setActive] = useState("0");
   const [open, setOpen] = useState(false);
   const [enable, setEnble] = useState(1);
+  const [peppy, setPeppy] = useState({ rest: true, user: false, info: false });
 
   const handleScroll = () => {
     const { top } = ref.current.getBoundingClientRect();
     setOpen(top - 75 < 0);
     console.log();
     for (let i = 1; i < 7; i++) {
-      console.log(itemsRef.current[2].getBoundingClientRect().y);
       if (itemsRef.current[i].getBoundingClientRect().y < 0) setEnble(i);
     }
   };
@@ -210,6 +203,22 @@ function RestScreen() {
     slidesToShow: 5,
     slidesToScroll: 1,
     arrows: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 410,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   useEffect(() => {
@@ -221,7 +230,10 @@ function RestScreen() {
 
   const scroll = (index, key) => {
     setEnble(index);
-    theposition: e.clientY - itemsRef.current[key].getBoundingClientRect().top;
+    window.scrollTo({
+      top: itemsRef.current[key].offsetTop,
+      behavior: "smooth",
+    });
   };
 
   return (
@@ -235,7 +247,9 @@ function RestScreen() {
               src={require("../../assets/media/img30.jpg")}
             />
             <button className="back-btn">بازگشت</button>
-            <button className="hoby-btn">علاقه مندی</button>
+            <button className="hoby-btn">
+              <span>علاقه مندی</span>
+            </button>
             <button className="discount-btn">تا10% تخفیف</button>
             <img
               className="rest-info-img-logo"
@@ -258,10 +272,8 @@ function RestScreen() {
                     starColor={"orange"}
                     value={3}
                   />
-                  {/* <div> */}
                   <button className="rate-btn">4.3</button>
                   <button className="comment-btn">مشاهده 24 نظر</button>
-                  {/* </div> */}
                 </div>
               </div>
               <div className="rest-info-text-left">
@@ -298,21 +310,21 @@ function RestScreen() {
                 <ul>
                   <li
                     key="1"
-                    onClick={() => setActive("1")}
+                    onClick={() => (setActive("1"), setPeppy({ rest: true }))}
                     className={active === "1" ? "activeMenu menu" : "menu"}
                   >
                     منوی رستوران
                   </li>
                   <li
                     key="2"
-                    onClick={() => setActive("2")}
+                    onClick={() => (setActive("2"), setPeppy({ user: true }))}
                     className={active === "2" ? "activeMenu review" : "review"}
                   >
                     نظرات کاربران
                   </li>
                   <li
                     key="3"
-                    onClick={() => setActive("3")}
+                    onClick={() => (setActive("3"), setPeppy({ info: true }))}
                     className={active === "3" ? "activeMenu info" : "info"}
                   >
                     اطلاعات کلی
@@ -320,13 +332,16 @@ function RestScreen() {
                 </ul>
               </div>
               <div>
-                <div className={open ? "slider-menu-show" : "slider-menu"}>
+                <div
+                  className={
+                    open && peppy.rest ? "slider-menu-show" : "slider-menu"
+                  }
+                >
                   <div className="slider-menu-wrapper">
                     <Slider {...settingsres}>
                       {cartFoodList.map(({ category, menuImg, key }, index) => (
-                        <a href={`#category-${key}`}>
+                        <div href={`#category-${key}`}>
                           <div
-                            // onClick={() => setEnble(index)}
                             onClick={() => scroll(index, key)}
                             className={
                               enable == index
@@ -337,14 +352,18 @@ function RestScreen() {
                             <img src={menuImg} />
                             <span>{category}</span>
                           </div>
-                        </a>
+                        </div>
                       ))}
                     </Slider>
                   </div>
                 </div>
               </div>
             </div>
-            <div style={{ backgroundColor: "rgb(240, 240, 240)" }}>
+            <div
+              className={
+                peppy.rest ? "search-input-rest-container" : "nodisplay"
+              }
+            >
               <div className="search-input-rest">
                 <div className="search-input-wrapper">
                   <form className="search-input-form">
@@ -378,7 +397,180 @@ function RestScreen() {
                 </div>
               </div>
             </div>
+            <div className={peppy.user ? "userComment" : "nodisplay"}>
+              <div className="userComment-wrapper">
+                <h4>نظرات کاربران در مورد رستوران بوکا</h4>
+                <div className="userComment-estimate">
+                  <div className="userComment-star-total-container">
+                    <div className="userComment-star">
+                      <StarRatingComponent
+                        name="rate1"
+                        starCount={5}
+                        emptyStarColor={"#c1c3d6"}
+                        className={"rest-rating"}
+                        starColor={"orange"}
+                        value={3}
+                      />
+                    </div>
+                    <div className="userComment-total">
+                      <b>4.4</b>
+                      <span>(3987 نظر)</span>
+                    </div>
+                  </div>
+                  <ul className="userComment-summary">
+                    <li>
+                      <b></b>
+                      <div className="rate-bar">
+                        <i className="good" />
+                      </div>
+                      <span>35نظر</span>
+                    </li>
+                    <li>
+                      <b></b>
+                      <div className="rate-bar">
+                        <i className="notbad" />
+                      </div>
+                      <span>17نظر</span>
+                    </li>
+                    <li>
+                      <b></b>
+                      <div className="rate-bar">
+                        <i className="bad" />
+                      </div>
+                      <span>5نظر</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="comment-row">
+                  <div>
+                    <div className="comment-row-title">
+                      <div>
+                        <figure></figure>
+                        <div className="comment-row-title-name">
+                          <span>پژمان غریبیان</span>
+                          <span>2سال پیش</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="comment-row-text">
+                      <p>
+                        با سلام . یک ساعت و ربع طول کشید برای دو تا ساندویچ کوچک
+                        با نان سفید ؟؟!! که حتی اعلان نکرده بودند که در نان سفید
+                        ساندویچ درست میگردد . وقتی سانویچ ها را دریافت کردیم ،
+                        نمیدانستیم کدام کباب تابه ای است و کدام کتلت ، حتی یک
+                        علامت ساده هم نداشت تا نوع ساندویچ را تشخیص دهیم ساندویچ
+                        ها سرد بودند و مجبور شدیم مجددا آن را گرم کنیم{" "}
+                      </p>
+                    </div>
+                    <div className="comment-row-orderFood">
+                      <span>
+                        کوکوسیب زمینی
+                        <small className="review-rate">
+                          <i className="icon-star" />
+                          <cite>3</cite>
+                        </small>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className={peppy.info ? "rest-data" : "nodisplay"}>
+              <div className="rest-data-wrapper">
+                <div>
+                  <h4>آدرس</h4>
+                  <header>
+                    <i className="icon-placeholder" />
+                    <span>
+                      خیابان مطهری،نرسیده به سهروردی،نبش کوچه سنندج،پلاک 110
+                    </span>
+                  </header>
+                  <div className="map-holder">
+                    <div className="map">
+                      <img
+                        src={require("../../assets/media/slidericon/map.png")}
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="basic-info">
+                  <h4>مشخصات کلی</h4>
+                  <ul>
+                    <li>
+                      <label>
+                        <i className="icon-stopwatch" />
+                        میانگین زمان ارسال
+                      </label>
+                      <aside>40تا 50 دقیقه</aside>
+                    </li>
+                    <li>
+                      <label>
+                        <i className="icon-scooter" />
+                        ارسال به خارج از محدوده
+                      </label>
+                      <aside>ندارد</aside>
+                    </li>
+                    <li>
+                      <label>
+                        <i className="icon-pie" />
+                        نوع غذا
+                      </label>
+                      <aside>
+                        <a href="#">فست فود</a>
+                        <a href="#">پیتزا</a>
+                        <a href="#">ساندویچ</a>
+                        <a href="#">سوخاری</a>
+                      </aside>
+                    </li>
+                  </ul>
+                </div>
+                <div className="section-whrs">
+                  <h4> ساعت سرویس دهی</h4>
+                  <div className="section-whrs-text">
+                    <div className="section-whrs-text-right">
+                      <header>
+                        <i />
+                        امروز
+                        <small>(یکشنبه، 25 خرداد 1399)</small>
+                      </header>
+                      <ul>
+                        <li>
+                          <div>
+                            <b>نهار</b>
+                            <span>12:00 تا 17:00</span>
+                          </div>
+                        </li>
+                        <li>
+                          <div>
+                            <b>شام</b>
+                            <span>17:00 تا 23:20</span>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="section-whrs-text-left">
+                      <header>
+                        <span></span>
+                        <span>نهار</span>
+                        <span>شام</span>
+                      </header>
+                      <div className="section-whrs-text-left-row">
+                        <span>شنبه</span>
+                        <span>12:00 تا 17:00</span>
+                        <span>17:00 تا 23:30</span>
+                      </div>
+                      <div className="section-whrs-text-left-row">
+                        <span>یکشنبه</span>
+                        <span>12:00 تا 17:00</span>
+                        <span>17:00 تا 23:30</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </section>
+          <Footer />
         </div>
         <div className="rest-pay-container">
           <div className="rest-pay">
