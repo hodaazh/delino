@@ -87,7 +87,7 @@ const settingSearch = {
 };
 function Search() {
   return (
-    <div>
+    <div className="section-search">
       <Navbar />
       <FindCity />
       <div className="search-navbar">

@@ -170,7 +170,7 @@ function MainScreen() {
   const [state, setState] = useState({
     tizerslide: 0,
     otherslide: 3,
-    log: "pre",
+    logo: "pre",
   });
 
   useEffect(() => {

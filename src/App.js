@@ -10,6 +10,7 @@ import RestScreen from "./screen/RestScreen/RestScreen";
 import CartFood from "./components/CartFood/CartFood";
 import Search from "./screen/Search/Search";
 import FindCity from "./components/FindCity/FindCity";
+import Order from "./screen/Order/Order";
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
       {/* <Message /> */}
       {/* <RestScreen /> */}
       {/* <CartFood /> */}
-      <Search />
+      {/* <Search /> */}
+      <Order />
     </div>
   );
 }
