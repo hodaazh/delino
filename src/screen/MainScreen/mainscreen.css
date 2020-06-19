@@ -12,13 +12,11 @@ a {
 .btn-default {
   background: linear-gradient(-60deg, #ef4123, #ef2379);
 }
-
 .forsticky {
   position: sticky;
   top: 0;
   z-index: 999;
 }
-
 .search-all-rest__wrapper {
   display: flex;
   justify-content: center;
@@ -26,7 +24,6 @@ a {
   width: 90%;
   font-size: 1.125rem;
 }
-
 .search-all-rest {
   background-color: #f8f8f8;
   padding: 0.8em 0;
@@ -218,7 +215,6 @@ a {
 }
 .app-promotion-right-form {
   display: flex;
-
   width: 100%;
   margin-bottom: 1.5em;
   box-sizing: border-box;
@@ -343,6 +339,22 @@ h3 {
 .home-namad-wrapper div:nth-child(2) img {
   width: 11rem;
 }
+.app-promotion-right-form .btn-default {
+  position: relative;
+}
+/* .app-promotion-right-form .btn-default::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  content: "";
+  height: 100%;
+  width: 0;
+  background: linear-gradient(180deg, transparent 0, rgba(95, 57, 57, 0.25));
+}
+.app-promotion-right-form .btn-default:hover:after {
+  background: linear-gradient(180deg, transparent 0, rgba(95, 57, 57, 0.75));
+} */
 @media only screen and (max-width: 1300px) {
   .search-all-rest__wrapper {
     width: 90%;
@@ -466,7 +478,6 @@ h3 {
   .app-promotion-left {
     display: none;
   }
-
   .famous-rest-wrapper li {
     width: calc((100%) / 3);
   }

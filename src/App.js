@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import MainScreen from "./screen/MainScreen/MainScreen";
 import Cart from "./components/Cart/Cart";
@@ -14,16 +15,20 @@ import Order from "./screen/Order/Order";
 
 function App() {
   return (
-    <div className="App">
-      {/* <MainScreen /> */}
-      {/* <Cart /> */}
-      {/* <SlideShow /> */}
-      {/* <Message /> */}
-      {/* <RestScreen /> */}
-      {/* <CartFood /> */}
-      {/* <Search /> */}
-      <Order />
-    </div>
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route path="/" exact component={MainScreen} />
+          <Route path="/Rest" component={RestScreen} />
+          <Route path="/search" component={Search} />
+          <Route path="/order" component={Order} />
+        </Switch>
+        {/* <MainScreen /> */}
+        {/* <RestScreen /> */}
+        {/* <Search /> */}
+        {/* <Order /> */}
+      </div>
+    </Router>
   );
 }
 
