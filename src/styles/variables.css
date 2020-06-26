@@ -1,0 +1,23 @@
+:root {
+  --color-primary: #383c47;
+  --color-zero: #333;
+  --color-first: #ef4123;
+  --color-second: #fff;
+  --color-third: #232323;
+  --color-forth: #ddf0e2;
+  --color-fifth: #f0f0f0;
+  --color-six: #f8f8f8;
+  --color-seven: #efefef;
+  --color-eight: #ddd;
+  --color-nine: #fcb146;
+  --color-ten: #f3f3f3;
+
+  --text-color-second: #888;
+  --text-color-third: #ccc;
+
+  --color-border-first: rgb(128, 128, 128, 0.1);
+  --color-border-second: rgba(128, 128, 128, 0.2);
+  --color-border-third: rgb(190, 189, 189, 0.2);
+  --color-border-forth: rgba(190, 189, 189, 0.1);
+  --shadow-first: rgb(56, 60, 71, 0.1);
+}

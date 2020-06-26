@@ -1,0 +1,38 @@
+.sliders-component {
+  margin-bottom: 3rem;
+  overflow: hidden;
+}
+.sliders-component .sliders__wrapper {
+  flex: 1;
+  margin: 2.5rem auto;
+  width: 90%;
+  justify-content: space-between;
+}
+.sliders-component .sliders__title {
+  font-size: 2.125rem;
+  font-weight: 500;
+}
+.sliders-component .sliders__holder {
+  margin: 0rem auto;
+  width: 90%;
+  box-sizing: border-box;
+  padding: 0.5rem 0;
+}
+.sliders-component .slick-track {
+  margin: 0;
+}
+.sliders-component .resturant a {
+  display: flex;
+  font-size: 1rem;
+  color: #ef4123;
+}
+.sliders-component .resturant a:after {
+  content: "\e903";
+  font-family: "icomoon";
+  margin-right: 0.4rem;
+}
+@media only screen and (max-width: 768px) {
+  .sliders-component .resturant a {
+    font-size: 0.875rem;
+  }
+}

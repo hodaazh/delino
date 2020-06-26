@@ -1,0 +1,213 @@
+.login_btn {
+  padding: 0.48rem 0.95rem;
+  border: 1px solid var(--color-first);
+  color: var(--color-first);
+  border-radius: 0.3rem;
+  margin-left: 0.2rem;
+  font-size: 1rem;
+}
+.signUp_btn {
+  font-size: 1rem;
+  color: var(--color-primary);
+}
+.cart_btn {
+  display: flex;
+  /* padding: 0.48rem 0.95rem; */
+  padding: 0.7rem 1.3rem; /* chikar konam in cheshmi padding nadam */
+  font-size: 1.3rem;
+  border-radius: 0.3rem;
+  background: linear-gradient(-60deg, var(--color-first), #ef2379);
+  color: var(--color-second);
+}
+.search_btn {
+  width: 100%;
+  color: #fff;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  height: 100%;
+  padding: 0 0.5rem;
+  box-sizing: border-box;
+  background: linear-gradient(-60deg, var(--color-first), #ef2379);
+}
+.postCart_btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0 2rem 2rem 2rem;
+  background: linear-gradient(-60deg, var(--color-first), #ef2379);
+  position: absolute;
+  top: 0.7rem;
+  left: 0.5rem;
+  color: var(--color-second);
+  font-size: 0.9rem;
+}
+.link_btn {
+  padding: 1.1rem 1.5rem;
+  box-sizing: border-box;
+  background: linear-gradient(-60deg, var(--color-first), #ef2379);
+}
+.back_btn,
+.hoby_btn {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 1.3rem 0 0 3rem;
+  padding: 0.3rem 0.9rem;
+  border-radius: 0.3rem;
+  border: 1px solid white;
+  color: white;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.back_btn:after {
+  content: "\e908";
+  font-family: "icomoon";
+  font-size: 1.3rem;
+  padding-right: 0.2rem;
+}
+.hoby_btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 1.3rem 3rem 0 0 !important;
+}
+.hoby_btn::before {
+  content: "\e916";
+  font-family: "icomoon";
+  padding-left: 0.2rem;
+}
+.hoby_btn:hover::before {
+  content: "\e917";
+  font-family: "icomoon";
+  color: white;
+}
+.hoby_btn:hover {
+  background: linear-gradient(-60deg, #ef4123, #ef2379);
+  border-color: transparent;
+}
+.discount_btn {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(-60deg, #ef4123, #ef2379);
+  padding: 0.3rem 1rem;
+  margin: 0 0 1.3rem 3rem !important;
+  border-radius: 0 2rem 2rem 2rem;
+  font-size: 0.9rem;
+  color: white;
+}
+.rate_btn,
+.comment_btn {
+  padding: 0.3rem 0.5rem;
+  line-height: 1rem;
+  border-radius: 5px;
+}
+.rate_btn {
+  background-color: #21c64f;
+  color: white;
+  margin: 0 0.5rem 0 0.25rem;
+  padding: 7px;
+  font-size: 0.875rem;
+}
+.comment_btn {
+  border: 1px solid var(--color-first);
+  padding: 0.3rem 0.5rem;
+  color: var(--color-first);
+  line-height: 1rem;
+  height: 100%;
+  font-size: 0.75rem;
+}
+.restPostCard_btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0 2rem 2rem 2rem;
+  background: linear-gradient(-60deg, #ef4123, #ef2379);
+  position: absolute;
+  top: 0.7rem;
+  left: 0.5rem;
+  color: #fff;
+  font-size: 0.9rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  top: 0;
+  left: 0;
+  font-size: 0.5rem;
+}
+.search_filter {
+  width: 100%;
+  color: var(--color-primary);
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  height: 100%;
+  padding: 0 0.5rem;
+  box-sizing: border-box;
+  background-color: var(--color-second);
+  border: 1px solid #ef4123;
+}
+.FilterCircle {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: var(--color-six);
+  margin-left: 0.2rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .searchBar__wrapper {
+    width: 90%;
+  }
+  .search_btn {
+    font-size: 0.875rem;
+    /* height: 2.5rem; */
+  }
+  .signUp_btn {
+    display: none;
+  }
+  .cart_btn {
+    font-size: 1.1rem;
+  }
+  .login_btn {
+    font-size: 0.87rem;
+    padding: 0.3em 1em;
+  }
+  .hoby_btn span {
+    display: none;
+  }
+  .hoby_btn::before {
+    padding-left: 0;
+  }
+  .back_btn {
+    margin: 1rem 0 0 2rem;
+  }
+  .hoby_btn {
+    margin: 1rem 2rem 0 2rem !important;
+  }
+  .comment_btn {
+    font-size: 0.75rem;
+  }
+  .discount_btn {
+    margin: 0 0 1.3rem 2rem !important;
+  }
+  .rate_btn {
+    order: 1;
+    margin: 0.3rem 0 0 0;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .back_btn {
+    margin: 1.3rem 0 0 2rem;
+  }
+  .hoby_btn {
+    margin: 1.3rem 2rem 0 2rem !important;
+  }
+  .discount_btn {
+    margin: 0 0 1.3rem 2rem !important;
+  }
+  .FilterCircle {
+    margin-left: 0;
+  }
+  .filter-button span {
+    display: none;
+  }
+}

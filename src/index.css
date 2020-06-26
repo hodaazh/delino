@@ -1,9 +1,16 @@
-@import "./assets/styles/main.css";
+@import "./styles/main.css";
+
+html {
+  font-size: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
   direction: rtl;
   font-family: "iransans";
   background-color: white;
-  color: var(--main-color);
+  font-size: 1rem;
+  color: var(--color-primary);
 }

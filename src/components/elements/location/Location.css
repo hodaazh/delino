@@ -1,0 +1,43 @@
+.location {
+  padding: 1.4em 0;
+  border-bottom: 0.5px solid var(--color-border-first);
+  z-index: 2;
+  background-color: var(--color-second);
+}
+.location .location__wrapper {
+  margin: 0 auto;
+  width: 90%;
+  font-size: 1.125rem;
+}
+.location .location__wrapper b {
+  padding: 0 0.2em;
+}
+.location .location__wrapper strong::after {
+  content: "\e905";
+  font-family: "icomoon";
+  font-size: 0.7rem;
+  margin-right: 0.5em;
+  font-weight: 500;
+}
+.location .location__wrapper strong {
+  color: var(--color-first);
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding-bottom: 0.2em;
+}
+.location .location__wrapper strong:hover {
+  border-bottom: 1px dotted var(--color-first);
+}
+
+@media only screen and (max-width: 768px) {
+  .location {
+    padding: 1em 0;
+  }
+  .location .location__wrapper {
+    font-size: 0.875rem;
+  }
+  .location .location__wrapper strong,
+  .location .location__wrapper b {
+    font-size: 0.875rem;
+  }
+}

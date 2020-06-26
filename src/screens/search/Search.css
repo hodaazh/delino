@@ -1,0 +1,102 @@
+.search-page .search-container {
+  background-color: var(--color-six);
+  position: sticky;
+  top: 0;
+  z-index: 9;
+}
+.search-page .search-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
+}
+.search-page .applied-filter-list {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.search-page .applied-filter-list ul {
+  color: black;
+  text-align: right;
+}
+.search-page .applied-filter-list li {
+  display: flex;
+  align-items: center;
+  background-color: #eaeaea;
+  padding: 0.65rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+}
+.search-page .applied-filter-list i {
+  margin-right: 0.2rem;
+}
+.search-page .search__container {
+  width: 90%;
+  margin: 0 auto;
+}
+.search-page .search__result-container h3 {
+  color: #333;
+}
+/* .search__result-container {
+  width: 90%;
+  margin: 0 auto;
+} */
+.search-page .search__result-wrapper,
+.search-page .search__Related-wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+.search-page .search-bar {
+  padding: 3rem 0 2rem 0;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  color: #888;
+}
+.search-page .search-bar h1 {
+  color: black;
+  flex: 1;
+  text-align: right;
+  font-size: 1.625rem;
+  /* font-weight: 500; */
+}
+.search-page .search-bar h1 p {
+  display: inline-block;
+}
+.search-page .search-bar strong {
+  color: var(--color-first);
+  margin: 0 0.4rem;
+}
+.search-page .search-bar .area:hover {
+  border-bottom: 0.5px dotted var(--color-first);
+}
+.search-page .search__cart-wrapper {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+}
+.search-page .search__Related {
+  border-top: 1px solid #eee;
+  background-color: var(--color-six);
+  margin-top: 17rem;
+  padding-bottom: 3rem;
+}
+@media only screen and (max-width: 992px) {
+  .search-page .search-bar h1 {
+    font-size: 1.25rem;
+  }
+  .search-page .search-bar small {
+    font-size: 80%;
+    margin-right: 0.3rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .search-page .search-bar h1 {
+    font-size: 1.125rem;
+    margin-bottom: 0.3rem;
+  }
+  .search-page .search__result-wrapper .search-bar {
+    flex-direction: column;
+    align-items: end;
+  }
+}

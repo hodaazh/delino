@@ -1,0 +1,32 @@
+.navBar-component {
+  justify-content: space-between;
+  padding: 1.1rem;
+  border-bottom: 0.5px solid var(--color-border-first);
+  font-size: 1rem;
+  z-index: 6;
+  background-color: var(--color-second);
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+}
+.navBar-component-search {
+  position: unset !important;
+  top: unset;
+}
+.navBar-component .logoSize {
+  font-size: 2.2rem;
+}
+.navBar-component .navBar__right {
+  justify-content: end;
+  width: 20%;
+}
+.navBar-component .navBar__left {
+  justify-content: flex-end;
+  width: 20%;
+}
+
+@media only screen and (max-width: 768px) {
+  .navBar-component {
+    padding: 0.8rem;
+  }
+}
